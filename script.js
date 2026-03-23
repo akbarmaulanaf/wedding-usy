@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- KONFIGURASI GOOGLE APPS SCRIPT ---
-  // URL dimuat dari config.js
-  const WEBHOOK_URL = window.CONFIG?.WEBHOOK_URL || "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+  const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxCdF-JZJXzkhxJTbQsgjh1EwkBtrsq4G8q3d747MVPJJ2w1g7uT2NeRyz0HFKEM7xO/exec";
 
   // --- LOGIKA URL NAMA TAMU ---
   const urlParams = new URLSearchParams(window.location.search);
