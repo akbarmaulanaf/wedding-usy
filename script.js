@@ -67,7 +67,58 @@ document.addEventListener("DOMContentLoaded", () => {
     wishesContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 
-  // --- SUBMIT FORM RSVP ---
+  // --- LOAD MESSAGES DARI GOOGLE SHEET ---
+  const loadMessages = async () => {
+    try {
+      const response = await fetch("/api/messages");
+      const result = await response.json();
+
+      if (result.success && result.data && Array.isArray(result.data)) {
+        // Clear existing wishes
+        wishesContainer.innerHTML = "";
+
+        // Add each message as a card
+        result.data.forEach((item) => {
+          const [nama, jumlahTamu, status, pesan, waktu] = item;
+
+          // Skip if pesan kosong
+          if (!pesan || pesan.trim() === "") return;
+
+          let statusBadge = "";
+          if (status === "Hadir") {
+            statusBadge = '<span class="text-[10px] bg-green-900/40 border border-green-700 text-green-400 px-2 py-1 rounded-full uppercase tracking-wider">Hadir</span>';
+          } else if (status === "Tidak Hadir") {
+            statusBadge = '<span class="text-[10px] bg-red-900/40 border border-red-700 text-red-400 px-2 py-1 rounded-full uppercase tracking-wider">Tidak Hadir</span>';
+          } else {
+            statusBadge = '<span class="text-[10px] bg-yellow-900/40 border border-yellow-700 text-yellow-400 px-2 py-1 rounded-full uppercase tracking-wider">Masih Ragu</span>';
+          }
+
+          const newCardHTML = `
+            <div class="min-w-[280px] md:min-w-[320px] max-w-[320px] bg-wedding-black p-6 rounded-xl border border-wedding-gold/50 flex-shrink-0 flex flex-col justify-between shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+              <div>
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-wedding-gold font-semibold text-lg">${nama}</h4>
+                  ${statusBadge}
+                </div>
+                <p class="text-gray-300 text-sm italic leading-relaxed">"${pesan}"</p>
+              </div>
+              <div class="mt-4 text-xs text-gray-500 text-right">${waktu}</div>
+            </div>
+          `;
+
+          wishesContainer.insertAdjacentHTML("beforeend", newCardHTML);
+        });
+      }
+    } catch (error) {
+      console.error("Error loading messages:", error);
+    }
+  };
+
+  // Load messages saat page load
+  loadMessages();
+
+  // Refresh messages setiap 10 detik
+  setInterval(loadMessages, 10000);
   const rsvpForm = document.getElementById("rsvp-form");
   rsvpForm.addEventListener("submit", (e) => {
     e.preventDefault();
