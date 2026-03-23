@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- KONFIGURASI GOOGLE APPS SCRIPT ---
-  const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxCdF-JZJXzkhxJTbQsgjh1EwkBtrsq4G8q3d747MVPJJ2w1g7uT2NeRyz0HFKEM7xO/exec";
+  const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxj-bz-SANfWcrx7PkZ-Dr2WaVuaWCAs39_SO7LYLi0A1CnQawtMOMZIgen57FUG99W/exec";
 
   // --- LOGIKA URL NAMA TAMU ---
   const urlParams = new URLSearchParams(window.location.search);
