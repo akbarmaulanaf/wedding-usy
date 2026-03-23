@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- KONFIGURASI GOOGLE APPS SCRIPT ---
   // PENTING: Ganti placeholder di bawah dengan URL dari Google Apps Script Anda
   // Atau set di Vercel Environment Variables sebagai VITE_WEBHOOK_URL
-  const WEBHOOK_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+  const WEBHOOK_URL = process.env.VITE_WEBHOOK_URL;
 
   // --- LOGIKA URL NAMA TAMU ---
   const urlParams = new URLSearchParams(window.location.search);
