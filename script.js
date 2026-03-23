@@ -73,16 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("/api/messages");
       const result = await response.json();
 
+      console.log("Messages API Response:", result);
+
       if (result.success && result.data && Array.isArray(result.data)) {
+        console.log("Data received:", result.data.length, "messages");
+
         // Clear existing wishes
         wishesContainer.innerHTML = "";
 
         // Add each message as a card
-        result.data.forEach((item) => {
+        result.data.forEach((item, index) => {
           const [nama, jumlahTamu, status, pesan, waktu] = item;
 
+          console.log(`Message ${index}:`, { nama, status, pesan: pesan?.substring(0, 30) });
+
           // Skip if pesan kosong
-          if (!pesan || pesan.trim() === "") return;
+          if (!pesan || pesan.toString().trim() === "") return;
 
           let statusBadge = "";
           if (status === "Hadir") {
@@ -108,6 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           wishesContainer.insertAdjacentHTML("beforeend", newCardHTML);
         });
+      } else {
+        console.log("No data or success is false");
       }
     } catch (error) {
       console.error("Error loading messages:", error);
