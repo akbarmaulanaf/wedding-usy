@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- KONFIGURASI GOOGLE APPS SCRIPT ---
-  const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyaYIibop6EgX9cxNgqfEm4pPFta6HuyHFZB1qhS73xb7kboaqJGEFozrlmXgNR9yTx/exec";
+  // --- KONFIGURASI VERCEL API ---
+  const WEBHOOK_URL = "/api/rsvp";
 
   // --- LOGIKA URL NAMA TAMU ---
   const urlParams = new URLSearchParams(window.location.search);
