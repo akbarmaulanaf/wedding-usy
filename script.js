@@ -71,8 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (result.success && result.data && Array.isArray(result.data)) {
         console.log("Data received:", result.data.length, "messages");
 
-        // Data sudah dalam urutan terbaru dulu dari Google Apps Script
-        const messagesData = result.data;
+        // REVERSE data agar newest di atas (terbaru dulu)
+        const messagesData = [...result.data].reverse();
 
         // Clear existing wishes
         wishesContainer.innerHTML = "";
@@ -86,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
           // Skip if pesan kosong
           if (!pesan || pesan.toString().trim() === "") return;
 
+          // Limit pesan ke 100 karakter
+          let pesanTruncated = pesan.toString().substring(0, 100);
+          if (pesan.toString().length > 100) {
+            pesanTruncated += "...";
+          }
+
           let statusBadge = "";
           if (status === "Hadir") {
             statusBadge = '<span class="text-[10px] bg-green-900/40 border border-green-700 text-green-400 px-2 py-1 rounded-full uppercase tracking-wider">Hadir</span>';
@@ -98,11 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
           const newCardHTML = `
             <div class="w-full bg-wedding-black p-4 md:p-6 rounded-xl border border-wedding-gold/50 flex flex-col justify-between shadow-[0_0_15px_rgba(212,175,55,0.1)]">
               <div>
-                <div class="flex justify-between items-start mb-3">
-                  <h4 class="text-wedding-gold font-semibold text-lg">${nama}</h4>
+                <div class="flex justify-between items-start mb-3 gap-3">
+                  <h4 class="text-wedding-gold font-semibold text-lg line-clamp-1">${nama}</h4>
                   ${statusBadge}
                 </div>
-                <p class="text-gray-300 text-sm italic leading-relaxed">"${pesan}"</p>
+                <p class="text-gray-300 text-sm italic leading-relaxed break-words">"${pesanTruncated}"</p>
               </div>
               <div class="mt-4 text-xs text-gray-500 text-right">${waktu}</div>
             </div>
