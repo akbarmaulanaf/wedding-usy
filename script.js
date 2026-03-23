@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadMessages();
 
   // Refresh messages setiap 10 detik
-  setInterval(loadMessages, 10000);
+  setInterval(loadMessages, 4000);
   const rsvpForm = document.getElementById("rsvp-form");
   rsvpForm.addEventListener("submit", (e) => {
     e.preventDefault();
