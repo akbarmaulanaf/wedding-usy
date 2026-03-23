@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan - Wahid & Usy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+              script: ["Great Vibes", "cursive"],
+            },
+            colors: {
+              "wedding-gold": "#D4AF37",
+              "wedding-black": "#0a0a0a",
+              "wedding-dark": "#171717",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-wedding-black text-gray-300 antialiased overflow-hidden" id="body-container">
+    <section id="cover-page" class="fixed inset-0 z-50 flex items-center justify-center bg-cover-img fade-transition">
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="relative z-10 text-center text-white px-6 py-12 flex flex-col items-center justify-center h-full">
+        <h3 class="text-sm md:text-lg tracking-[0.3em] uppercase mb-4 font-light text-gray-300">Wedding Invitation</h3>
+        <h1 class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-8xl mb-5 mt-2 text-wedding-gold glow-gold tracking-[0.08em] sm:tracking-[0.1em] md:tracking-[0.15em]">Wahid & Usy</h1>
+        <div class="mt-1 mb-10">
+          <p class="text-sm md:text-base font-light mb-2 text-gray-300">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <h2 id="guest-name" class="font-serif text-2xl md:text-3xl font-semibold mb-2 text-white">-</h2>
+          <p class="text-sm md:text-base font-light text-gray-300">di Tempat</p>
+        </div>
+        <button id="open-invitation" class="bg-wedding-gold hover:bg-yellow-500 text-wedding-black font-semibold py-3 px-8 rounded-full transition duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"
+            />
+          </svg>
+          Buka Undangan
+        </button>
+      </div>
+    </section>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-wedding-gold text-black font-semibold px-6 py-3 rounded-full shadow-2xl z-[100] hidden">Nomor Rekening Berhasil Disalin!</div>
+
+    <main id="main-content" class="opacity-0 invisible fade-transition h-screen overflow-y-auto bg-wedding-black">
+      <div
+        class="relative w-full bg-cover bg-center bg-no-repeat"
+        style="background-image: url(&quot;https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;)"
+      >
+        <div class="absolute inset-0 bg-black/80"></div>
+        <section class="relative z-10 py-24 px-6 max-w-5xl mx-auto text-center" id="profile">
+          <h2 class="font-serif text-3xl text-wedding-gold font-semibold mb-6 glow-gold">Bismillahirahmanirrahim</h2>
+          <p class="text-sm md:text-base text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed">
+            Assalamu'alaikum Warahmatullahi Wabarakatuh.<br /><br />
+            Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, perkenankanlah kami merangkai kasih sayang yang Kau ciptakan di antara putra-putri kami:
+          </p>
+          <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mt-12">
+            <div class="flex flex-col items-center">
+              <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-wedding-gold shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                <img
+                  src="https://images.unsplash.com/photo-1677899656324-7c8aa1f19f8d?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Wahid"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="font-script text-4xl text-wedding-gold mb-2 glow-gold">Wahid</h3>
+              <p class="text-sm text-gray-300 mb-4">Putra dari Bapak ... & Ibu ...</p>
+              <a href="#" class="text-gray-500 hover:text-wedding-gold transition-colors flex items-center gap-1 text-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                @Wahid_ig
+              </a>
+            </div>
+            <div class="font-script text-5xl text-wedding-gold glow-gold">&</div>
+            <div class="flex flex-col items-center">
+              <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-wedding-gold shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                <img
+                  src="https://images.unsplash.com/photo-1627378228978-a62f71edff15?q=80&w=465&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Achyuni Fauziah"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="font-script text-4xl text-wedding-gold mb-2 glow-gold">Achyuni Fauziah</h3>
+              <p class="text-sm text-gray-300 mb-4">Putri dari Bapak ... & Ibu ...</p>
+              <a href="#" class="text-gray-500 hover:text-wedding-gold transition-colors flex items-center gap-1 text-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                @achyuni_ig
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="py-20 px-6 bg-wedding-dark" id="save-the-date">
+        <div class="max-w-4xl mx-auto text-center">
+          <h3 class="text-sm tracking-widest text-wedding-gold uppercase mb-2">Acara Pernikahan</h3>
+          <h2 class="font-serif text-4xl text-white font-semibold mb-12">Save The Date</h2>
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-wedding-black p-8 rounded-xl border border-wedding-gold/30 hover:border-wedding-gold transition duration-300">
+              <h4 class="font-serif text-2xl text-wedding-gold mb-4">Akad Nikah</h4>
+              <div class="flex flex-col items-center gap-2 text-gray-300 mb-6">
+                <span class="font-semibold text-lg text-white">Minggu, 12 April 2026</span>
+                <span>Pukul 08.00 WIB - Selesai</span>
+              </div>
+              <p class="text-sm text-gray-400">Bertempat di:<br /><strong class="text-gray-200">Masjid Raya / Gedung A</strong><br />Jl. Nama Jalan No. 123, Kota</p>
+            </div>
+            <div class="bg-wedding-black p-8 rounded-xl border border-wedding-gold/30 hover:border-wedding-gold transition duration-300">
+              <h4 class="font-serif text-2xl text-wedding-gold mb-4">Resepsi</h4>
+              <div class="flex flex-col items-center gap-2 text-gray-300 mb-6">
+                <span class="font-semibold text-lg text-white">Minggu, 12 April 2026</span>
+                <span>Pukul 11.00 WIB - Selesai</span>
+              </div>
+              <p class="text-sm text-gray-400">Bertempat di:<br /><strong class="text-gray-200">Gedung Resepsi B</strong><br />Jl. Nama Jalan No. 123, Kota</p>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h4 class="text-gray-400 mb-6">Menuju Hari Bahagia</h4>
+            <div class="flex justify-center gap-3 md:gap-6 text-center" id="countdown">
+              <div class="bg-wedding-black border border-wedding-gold/50 rounded-lg p-4 w-20 md:w-24 shadow-[0_0_10px_rgba(212,175,55,0.1)]">
+                <span id="days" class="block font-serif text-3xl md:text-4xl mb-1 text-wedding-gold">00</span>
+                <span class="text-xs font-light uppercase tracking-wider text-gray-400">Hari</span>
+              </div>
+              <div class="bg-wedding-black border border-wedding-gold/50 rounded-lg p-4 w-20 md:w-24 shadow-[0_0_10px_rgba(212,175,55,0.1)]">
+                <span id="hours" class="block font-serif text-3xl md:text-4xl mb-1 text-wedding-gold">00</span>
+                <span class="text-xs font-light uppercase tracking-wider text-gray-400">Jam</span>
+              </div>
+              <div class="bg-wedding-black border border-wedding-gold/50 rounded-lg p-4 w-20 md:w-24 shadow-[0_0_10px_rgba(212,175,55,0.1)]">
+                <span id="minutes" class="block font-serif text-3xl md:text-4xl mb-1 text-wedding-gold">00</span>
+                <span class="text-xs font-light uppercase tracking-wider text-gray-400">Menit</span>
+              </div>
+              <div class="bg-wedding-black border border-wedding-gold/50 rounded-lg p-4 w-20 md:w-24 shadow-[0_0_10px_rgba(212,175,55,0.1)]">
+                <span id="seconds" class="block font-serif text-3xl md:text-4xl mb-1 text-wedding-gold">00</span>
+                <span class="text-xs font-light uppercase tracking-wider text-gray-400">Detik</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="relative w-full bg-cover bg-center bg-no-repeat" style="background-image: url(&quot;https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1920&auto=format&fit=crop&quot;)">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <section class="relative z-10 py-24 overflow-hidden" id="our-moments">
+          <div class="max-w-4xl mx-auto text-center px-6 mb-16">
+            <h2 class="font-serif text-4xl text-wedding-gold font-semibold mb-6 glow-gold">Our Moments</h2>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto italic">
+              "Setiap detik yang kami lalui bersama adalah anugerah terindah. Berikut adalah sepenggal bingkai kenangan dari perjalanan cinta kami menuju hari bahagia."
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-6 w-full">
+            <div class="w-full no-scrollbar relative overflow-hidden">
+              <div class="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-wedding-black/90 to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-wedding-black/90 to-transparent z-10 pointer-events-none"></div>
+              <div class="animate-scroll-left gap-6 px-3">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 1" />
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 2" />
+                <img
+                  src="https://images.unsplash.com/photo-1721677337543-37b07e7e28b5?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover"
+                  alt="Moment 3"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover"
+                  alt="Moment 4"
+                />
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 5" />
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 1" />
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 2" />
+                <img src="https://images.unsplash.com/photo-1583939000340-02421379b3f3?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 3" />
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 4" />
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 5" />
+              </div>
+            </div>
+            <div class="w-full no-scrollbar relative overflow-hidden">
+              <div class="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-wedding-black/90 to-transparent z-10 pointer-events-none"></div>
+              <div class="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-wedding-black/90 to-transparent z-10 pointer-events-none"></div>
+              <div class="animate-scroll-right gap-6 px-3">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 6" />
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 7" />
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 8" />
+                <img
+                  src="https://images.unsplash.com/photo-1670529776180-60e4132ab90c?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover"
+                  alt="Moment 9"
+                />
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 10" />
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 6" />
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 7" />
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 8" />
+                <img src="https://images.unsplash.com/photo-1543886566-6b229eb429c3?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 9" />
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80" class="h-48 md:h-64 w-auto rounded-xl border border-wedding-gold/30 object-cover" alt="Moment 10" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="py-24 px-6 bg-wedding-dark" id="rsvp">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h3 class="text-sm tracking-widest text-wedding-gold uppercase mb-2">Ungkapan Kebahagiaan</h3>
+            <h2 class="font-serif text-4xl text-white font-semibold mb-4">Konfirmasi Kehadiran & Doa Restu</h2>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+          </div>
+
+          <form id="rsvp-form" class="bg-wedding-black p-6 md:p-10 rounded-2xl border border-wedding-gold/30 shadow-[0_0_20px_rgba(212,175,55,0.05)] mb-16">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm text-gray-400 mb-2">Nama Lengkap</label>
+                <input
+                  type="text"
+                  name="nama"
+                  id="input-nama"
+                  placeholder="Tulis nama Anda..."
+                  required
+                  class="w-full bg-[#171717] border border-gray-700 text-white rounded-lg p-3 focus:border-wedding-gold focus:ring-1 focus:ring-wedding-gold outline-none transition"
+                />
+              </div>
+              <div>
+                <label class="block text-sm text-gray-400 mb-2">Jumlah Tamu</label>
+                <select
+                  name="jumlah"
+                  required
+                  class="w-full bg-[#171717] border border-gray-700 text-white rounded-lg p-3 focus:border-wedding-gold focus:ring-1 focus:ring-wedding-gold outline-none transition appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>Pilih jumlah tamu</option>
+                  <option value="1">1 Orang</option>
+                  <option value="2">2 Orang</option>
+                  <option value="3">3 Orang</option>
+                  <option value="4">4 Orang</option>
+                  <option value="5">5 Orang</option>
+                  <option value="6">6 Orang</option>
+                  <option value="7">7 Orang</option>
+                  <option value="8">8 Orang</option>
+                  <option value="9">9 Orang</option>
+                  <option value="10">10 Orang</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm text-gray-400 mb-2">Konfirmasi Kehadiran</label>
+              <select name="status" required class="w-full bg-[#171717] border border-gray-700 text-white rounded-lg p-3 focus:border-wedding-gold focus:ring-1 focus:ring-wedding-gold outline-none transition appearance-none cursor-pointer">
+                <option value="" disabled selected>Apakah Anda akan hadir?</option>
+                <option value="Hadir">Ya, Saya akan hadir</option>
+                <option value="Tidak Hadir">Maaf, Saya tidak bisa hadir</option>
+                <option value="Masih Ragu">Masih ragu-ragu / Mungkin hadir</option>
+              </select>
+            </div>
+
+            <div class="mb-8">
+              <label class="block text-sm text-gray-400 mb-2">Ucapan & Doa (Opsional)</label>
+              <textarea
+                name="pesan"
+                rows="4"
+                placeholder="Tuliskan harapan dan doa untuk kami..."
+                class="w-full bg-[#171717] border border-gray-700 text-white rounded-lg p-3 focus:border-wedding-gold focus:ring-1 focus:ring-wedding-gold outline-none transition resize-none"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-wedding-gold hover:bg-yellow-500 text-wedding-black font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-md">Kirim Konfirmasi & Ucapan</button>
+          </form>
+
+          <hr class="border-gray-800 mb-12" />
+
+          <div class="relative">
+            <h3 class="font-serif text-2xl text-white text-center mb-8">Doa dari Sahabat & Keluarga</h3>
+            <button
+              id="slide-left"
+              class="absolute left-0 top-[60%] -translate-y-1/2 -ml-3 md:-ml-6 z-20 w-10 h-10 bg-wedding-dark border border-wedding-gold text-wedding-gold rounded-full flex items-center justify-center hover:bg-wedding-gold hover:text-black transition shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+            </button>
+
+            <div id="wishes-container" class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-4 px-2"></div>
+
+            <button
+              id="slide-right"
+              class="absolute right-0 top-[60%] -translate-y-1/2 -mr-3 md:-mr-6 z-20 w-10 h-10 bg-wedding-dark border border-wedding-gold text-wedding-gold rounded-full flex items-center justify-center hover:bg-wedding-gold hover:text-black transition shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative py-24 px-6 bg-wedding-black border-t border-gray-900 overflow-hidden" id="gift-registry">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url(&quot;https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1920&auto=format&fit=crop&quot;)"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <h3 class="text-sm tracking-widest text-wedding-gold uppercase mb-2">Wedding Gift</h3>
+            <h2 class="font-serif text-4xl text-white font-semibold mb-6 glow-gold">Tanda Kasih</h2>
+            <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+              Doa restu dan kehadiran Anda merupakan hadiah terindah bagi kami. Namun, apabila Anda ingin memberikan tanda kasih berupa hadiah, Anda dapat mengirimkannya melalui dua opsi di bawah ini:
+            </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+            <div
+              class="relative w-full max-w-sm mx-auto md:mx-0 bg-gradient-to-tr from-gray-900 via-gray-800 to-[#0a0a0a] rounded-2xl p-6 md:p-8 shadow-[0_15px_35px_rgba(0,0,0,0.5)] border border-gray-700 transform transition duration-500 hover:-translate-y-2 group"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl pointer-events-none"></div>
+
+              <div class="flex justify-between items-center mb-8 relative z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                  <line x1="2" y1="10" x2="8" y2="10"></line>
+                  <line x1="2" y1="14" x2="8" y2="14"></line>
+                  <line x1="16" y1="10" x2="22" y2="10"></line>
+                  <line x1="16" y1="14" x2="22" y2="14"></line>
+                  <line x1="8" y1="4" x2="8" y2="20"></line>
+                  <line x1="16" y1="4" x2="16" y2="20"></line>
+                </svg>
+                <span class="font-serif font-bold text-xl italic text-gray-300">BANK BCA</span>
+              </div>
+
+              <div class="mb-8 relative z-10 text-center">
+                <p class="font-mono text-2xl md:text-3xl text-white tracking-widest drop-shadow-md" id="rek-Wahid">1234 5678 90</p>
+              </div>
+
+              <div class="flex justify-between items-end relative z-10">
+                <div>
+                  <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-1">A.N Penerima</p>
+                  <p class="text-base text-wedding-gold font-semibold uppercase tracking-wider glow-gold">Wahid</p>
+                </div>
+                <button
+                  onclick="copyRekening('rek-Wahid')"
+                  class="bg-gray-800 border border-gray-600 hover:border-wedding-gold text-gray-300 hover:text-wedding-gold px-4 py-2 rounded-lg text-xs uppercase tracking-wider font-semibold transition flex items-center gap-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 16.5v2.25A2.25 2.25 0 0113.5 21h-9a2.25 2.25 0 01-2.25-2.25v-9a2.25 2.25 0 012.25-2.25H6m12 0a2.25 2.25 0 002.25-2.25V5.25A2.25 2.25 0 0018 3h-9a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9z"
+                    />
+                  </svg>
+                  Salin
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="relative w-full max-w-sm mx-auto md:mx-0 bg-gradient-to-tr from-[#9c7c25] via-[#D4AF37] to-[#e4cd7a] rounded-2xl p-6 md:p-8 shadow-[0_15px_35px_rgba(212,175,55,0.2)] border border-yellow-300/30 transform transition duration-500 hover:-translate-y-2 group"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-2xl pointer-events-none"></div>
+
+              <div class="flex justify-between items-center mb-8 relative z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="#4a3f12" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                  <line x1="2" y1="10" x2="8" y2="10"></line>
+                  <line x1="2" y1="14" x2="8" y2="14"></line>
+                  <line x1="16" y1="10" x2="22" y2="10"></line>
+                  <line x1="16" y1="14" x2="22" y2="14"></line>
+                  <line x1="8" y1="4" x2="8" y2="20"></line>
+                  <line x1="16" y1="4" x2="16" y2="20"></line>
+                </svg>
+                <span class="font-serif font-bold text-xl italic text-gray-900 drop-shadow-sm">BANK MANDIRI</span>
+              </div>
+
+              <div class="mb-8 relative z-10 text-center">
+                <p class="font-mono text-2xl md:text-3xl text-gray-900 font-medium tracking-widest drop-shadow-sm" id="rek-achyuni">0987 6543 21</p>
+              </div>
+
+              <div class="flex justify-between items-end relative z-10">
+                <div>
+                  <p class="text-[10px] text-gray-800 uppercase tracking-widest mb-1">A.N Penerima</p>
+                  <p class="text-base text-gray-900 font-bold uppercase tracking-wider drop-shadow-sm">Achyuni Fauziah</p>
+                </div>
+                <button onclick="copyRekening('rek-achyuni')" class="bg-gray-900 hover:bg-black text-wedding-gold px-4 py-2 rounded-lg text-xs uppercase tracking-wider font-semibold transition flex items-center gap-2 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 16.5v2.25A2.25 2.25 0 0113.5 21h-9a2.25 2.25 0 01-2.25-2.25v-9a2.25 2.25 0 012.25-2.25H6m12 0a2.25 2.25 0 002.25-2.25V5.25A2.25 2.25 0 0018 3h-9a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9z"
+                    />
+                  </svg>
+                  Salin
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-wedding-dark p-8 md:p-12 rounded-2xl border border-wedding-gold/20 text-center mx-auto shadow-xl">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-wedding-black border border-wedding-gold mb-6 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-wedding-gold">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-serif text-2xl text-wedding-gold mb-4 glow-gold">Kirim Kado / Hadiah Fisik</h4>
+            <p class="text-gray-300 mb-6 text-sm md:text-base leading-relaxed">Anda juga dapat membawa hadiah secara langsung ke lokasi acara pernikahan kami, atau mengirimkannya melalui kurir ke alamat berikut:</p>
+            <div class="bg-black p-6 rounded-lg border border-gray-800 inline-block text-left w-full max-w-md mx-auto">
+              <p class="text-white font-semibold mb-1">Penerima: Achyuni Fauziah / Wahid</p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Jl. Nama Jalan No. 123 (Rumah Pagar Hitam),<br />
+                Kelurahan, Kecamatan, Kota,<br />
+                Provinsi, Kode Pos 12345
+              </p>
+              <button onclick="copyRekening('alamat-kado')" class="w-full bg-wedding-dark hover:bg-gray-800 border border-gray-700 text-gray-300 py-2 rounded-md text-sm transition">Salin Alamat</button>
+              <span id="alamat-kado" class="hidden">Jl. Nama Jalan No. 123, Kelurahan, Kecamatan, Kota, Provinsi, Kode Pos 12345. Penerima: Achyuni Fauziah / Wahid</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative py-20 px-6 bg-wedding-dark border-t border-gray-900" id="closing">
+        <div class="relative z-10 max-w-2xl mx-auto text-center">
+          <h2 class="font-script text-5xl md:text-6xl text-wedding-gold mb-8 glow-gold">Terima Kasih</h2>
+
+          <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-10">Atas kehadiran, doa, dan dukungan Anda yang telah membuat hari kami istimewa. Semoga barokah dan keberkahan selalu menyertai hidup kita semua.</p>
+
+          <div class="flex items-center gap-6 md:gap-10 mb-12">
+            <p class="text-wedding-gold font-serif text-3xl md:text-4xl glow-gold flex-1 text-right">Wahid</p>
+            <div class="flex flex-col items-center flex-shrink-0">
+              <div class="w-0.5 h-8 bg-wedding-gold/40 mb-2"></div>
+              <p class="text-wedding-gold text-2xl font-light">&</p>
+              <div class="w-0.5 h-8 bg-wedding-gold/40 mt-2"></div>
+            </div>
+            <p class="text-wedding-gold font-serif text-3xl md:text-4xl glow-gold flex-1 text-left">Usy</p>
+          </div>
+
+          <p class="text-gray-400 text-sm mt-12">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        </div>
+      </section>
+
+      <footer class="bg-black text-center py-8 text-gray-500 text-sm border-t border-wedding-dark">
+        <p>&copy; 2026 Wahid & Usy. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
