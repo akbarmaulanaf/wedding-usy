@@ -21,11 +21,30 @@ export default async function handler(req, res) {
         body: JSON.stringify(req.body),
       });
 
+      // Check if response is ok
+      if (!response.ok) {
+        return res.status(response.status).json({
+          success: false,
+          error: `Google Apps Script returned status ${response.status}`,
+        });
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        return res.status(200).json({
+          success: true,
+          message: "Data saved successfully",
+        });
+      }
+
       const data = await response.json();
       return res.status(200).json(data);
     } catch (error) {
-      console.error("Error:", error);
-      return res.status(500).json({ success: false, error: error.message });
+      console.error("API Error:", error);
+      return res.status(500).json({
+        success: false,
+        error: "Internal server error: " + error.message,
+      });
     }
   }
 
