@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   if (req.method === "GET") {
     try {
-      const googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbxj-bz-SANfWcrx7PkZ-Dr2WaVuaWCAs39_SO7LYLi0A1CnQawtMOMZIgen57FUG99W/exec?action=getData";
+      const googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbwocsvMlmfKewFjylergmIsfxNkROZjMUNVHnmXfcSKe4s8RmMaRHA1t8Gh8_DedpZi/exec?action=getData";
 
       const response = await fetch(googleAppsScriptURL, {
         method: "GET",
