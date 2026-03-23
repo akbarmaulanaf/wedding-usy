@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (result.success && result.data && Array.isArray(result.data)) {
         console.log("Data received:", result.data.length, "messages");
 
-        // Reverse data untuk terbaru di atas
-        const reversedData = [...result.data].reverse();
+        // Data sudah dalam urutan terbaru dulu dari Google Apps Script
+        const messagesData = result.data;
 
         // Clear existing wishes
         wishesContainer.innerHTML = "";
 
         // Add each message as a card
-        reversedData.forEach((item, index) => {
+        messagesData.forEach((item, index) => {
           const [nama, jumlahTamu, status, pesan, waktu] = item;
 
           console.log(`Message ${index}:`, { nama, status, pesan: pesan?.substring(0, 30) });
