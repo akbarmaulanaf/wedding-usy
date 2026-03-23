@@ -283,23 +283,9 @@
 
           <hr class="border-gray-800 mb-12" />
 
-          <div class="relative">
+          <div>
             <h3 class="font-serif text-2xl text-white text-center mb-8">Doa dari Sahabat & Keluarga</h3>
-            <button
-              id="slide-left"
-              class="absolute left-0 top-[60%] -translate-y-1/2 -ml-3 md:-ml-6 z-20 w-10 h-10 bg-wedding-dark border border-wedding-gold text-wedding-gold rounded-full flex items-center justify-center hover:bg-wedding-gold hover:text-black transition shadow-lg"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-            </button>
-
-            <div id="wishes-container" class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar scroll-smooth py-4 px-2"></div>
-
-            <button
-              id="slide-right"
-              class="absolute right-0 top-[60%] -translate-y-1/2 -mr-3 md:-mr-6 z-20 w-10 h-10 bg-wedding-dark border border-wedding-gold text-wedding-gold rounded-full flex items-center justify-center hover:bg-wedding-gold hover:text-black transition shadow-lg"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-            </button>
+            <div id="wishes-container" class="space-y-4 max-h-96 overflow-y-auto px-2 py-4 scrollbar-thin scrollbar-thumb-wedding-gold scrollbar-track-gray-900"></div>
           </div>
         </div>
       </section>
@@ -452,5 +438,11 @@
     </main>
 
     <script src="script.js"></script>
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop volume="0.5">
+      <source src="wedding-bg.mp3" type="audio/mpeg" />
+      Browser Anda tidak support audio element.
+    </audio>
   </body>
 </html>

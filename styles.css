@@ -88,3 +88,29 @@ select option {
 .toast-animate {
   animation: slideUpFade 3s ease-in-out forwards;
 }
+
+/* Custom scrollbar untuk vertical cards */
+#wishes-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#wishes-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+#wishes-container::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#wishes-container::-webkit-scrollbar-thumb:hover {
+  background: #e5c158;
+}
+
+/* Firefox */
+#wishes-container {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 rgba(0, 0, 0, 0.5);
+}

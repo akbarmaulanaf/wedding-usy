@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const bodyContainer = document.getElementById("body-container");
 
   btnOpen.addEventListener("click", () => {
+    // Play background music
+    const bgMusic = document.getElementById("bg-music");
+    bgMusic.play().catch((err) => console.log("Audio play error:", err));
+
     coverPage.style.opacity = "0";
     setTimeout(() => {
       coverPage.style.display = "none";
@@ -54,20 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
-  // --- SLIDER UCAPAN RSVP ---
+  // --- LOAD MESSAGES DARI GOOGLE SHEET (Vertical Card Layout) ---
   const wishesContainer = document.getElementById("wishes-container");
-  const btnSlideLeft = document.getElementById("slide-left");
-  const btnSlideRight = document.getElementById("slide-right");
-  const scrollAmount = 340;
 
-  btnSlideLeft.addEventListener("click", () => {
-    wishesContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-  });
-  btnSlideRight.addEventListener("click", () => {
-    wishesContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  });
-
-  // --- LOAD MESSAGES DARI GOOGLE SHEET ---
   const loadMessages = async () => {
     try {
       const response = await fetch("/api/messages");
@@ -78,11 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (result.success && result.data && Array.isArray(result.data)) {
         console.log("Data received:", result.data.length, "messages");
 
+        // Reverse data untuk terbaru di atas
+        const reversedData = [...result.data].reverse();
+
         // Clear existing wishes
         wishesContainer.innerHTML = "";
 
         // Add each message as a card
-        result.data.forEach((item, index) => {
+        reversedData.forEach((item, index) => {
           const [nama, jumlahTamu, status, pesan, waktu] = item;
 
           console.log(`Message ${index}:`, { nama, status, pesan: pesan?.substring(0, 30) });
@@ -100,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           const newCardHTML = `
-            <div class="min-w-[280px] md:min-w-[320px] max-w-[320px] bg-wedding-black p-6 rounded-xl border border-wedding-gold/50 flex-shrink-0 flex flex-col justify-between shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+            <div class="w-full bg-wedding-black p-4 md:p-6 rounded-xl border border-wedding-gold/50 flex flex-col justify-between shadow-[0_0_15px_rgba(212,175,55,0.1)]">
               <div>
                 <div class="flex justify-between items-start mb-3">
                   <h4 class="text-wedding-gold font-semibold text-lg">${nama}</h4>
